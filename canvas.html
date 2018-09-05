@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 我的第一个canvas -->
+    <canvas id="tutorial" width="300" height="300"></canvas>
+    <script>
+        var canvas = document.getElementById('tutorial');
+        //获得 2d 上下文对象
+        var ctx = canvas.getContext('2d');
+
+        // 绘制矩形
+        // // 填充矩形
+        // ctx.fillRect (30, 30, 55, 50);
+        // ctx.fillStyle = "rgb(200,0,0)";
+        // // 边框矩形
+        // ctx.strokeRect(10, 70, 100, 50);     
+        // // 透明矩形
+        // ctx.clearRect(15, 15, 50, 25);
+        
+
+        // 绘制线段
+        // ctx.beginPath(); //新建一条path
+        // ctx.moveTo(50, 50); //把画笔移动到指定的坐标
+        // ctx.lineTo(200, 50);  //绘制一条从当前位置到指定坐标(200, 50)的直线.
+        // //闭合路径。会拉一条从当前点到path起始点的直线。如果当前点与起始点重合，则什么都不做
+        // ctx.closePath();
+        // ctx.stroke(); //绘制路径。
+
+
+        // 绘制三角形
+        // ctx.beginPath();
+        // ctx.moveTo(50, 50);
+        // ctx.lineTo(200, 50);
+        // ctx.lineTo(200, 200);
+        // ctx.closePath(); //虽然我们只绘制了两条线段，但是closePath会closePath，仍然是一个3角形
+        // ctx.stroke(); //描边。stroke不会自动closePath()
+        // ctx.fill();
+
+
+        // 绘制圆弧
+        // ctx.beginPath();
+        // ctx.arc(50, 50, 40, 0, -Math.PI / 2, false);
+        // ctx.stroke();
+
+        // ctx.beginPath();
+        // ctx.arc(150, 50, 40, 0, -Math.PI / 2, true);
+        // ctx.closePath();
+        // ctx.stroke();
+
+        // ctx.beginPath();
+        // ctx.arc(50, 150, 40, -Math.PI / 2, Math.PI / 2, false);
+        // ctx.fill();
+
+        // ctx.beginPath();
+        // ctx.arc(150, 150, 40, 0, Math.PI, false);
+        // ctx.fill();
+        // ctx.beginPath();
+        // ctx.moveTo(50, 50);
+        // //参数1、2：控制点1坐标   参数3、4：控制点2坐标  参数4：圆弧半径
+        // ctx.arcTo(200, 50, 200, 200, 100);
+        // ctx.lineTo(200, 200)
+        // ctx.closePath();
+        // ctx.stroke();
+
+        // ctx.beginPath();
+        // ctx.rect(50, 50, 10, 10);
+        // ctx.rect(200, 50, 10, 10)
+        // ctx.rect(200, 200, 10, 10)
+        // ctx.fill()
+
+
+
+
+        // 贝塞尔弧线
+
+        // 二次
+        // ctx.beginPath();
+        // ctx.moveTo(10, 200); //起始点
+        // var cp1x = 40, cp1y = 100;  //控制点
+        // var x = 200, y = 200; // 结束点
+        // //绘制二次贝塞尔曲线
+        // ctx.quadraticCurveTo(cp1x, cp1y, x, y);
+        // ctx.stroke();
+
+        // 三次
+        // ctx.beginPath();
+        // ctx.moveTo(40, 200); //起始点
+        // var cp1x = 20, cp1y = 100;  //控制点1
+        // var cp2x = 100, cp2y = 120;  //控制点2
+        // var x = 200, y = 200; // 结束点
+        // //绘制三次贝塞尔曲线
+        // ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y);
+        // ctx.stroke();
+
+
+
+        // 填充颜色
+        // for (var i = 0; i < 6; i++){
+        //     for (var j = 0; j < 6; j++){
+        //     ctx.fillStyle = 'rgb(' + Math.floor(255 - 42.5 * i) + ',' +
+        //         Math.floor(255 - 42.5 * j) + ',0)';
+        //     ctx.fillRect(j * 50, i * 50, 50, 50);
+        //     }
+        // }
+
+        // 边框颜色
+        // for (var i = 0; i < 6; i++){
+        //     for (var j = 0; j < 6; j++){
+        //         ctx.strokeStyle = `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+        //         ctx.strokeRect(j * 50, i * 50, 40, 40);
+        //     }
+        // }
+        // function randomInt(from, to){
+        //     return parseInt(Math.random() * (to - from + 1) + from);
+        // }
+
+        // 线宽
+        // lineWidth = value
+        
+        // 线结束类型
+        // lineCap = type
+        // butt：线段末端以方形结束
+        // round：线段末端以圆形结束
+        // square：线段末端以方形结束，但是增加了一个宽度和线段相同，高度是线段厚度一半的矩形区域。
+        
+        // 线段
+        // setLineDash 方法接受一个数组，来指定线段与间隙的交替；lineDashOffset属性设置起始偏移量.
+        // ctx.setLineDash([20, 5]);  // [实线长度, 间隙长度]
+        // ctx.lineDashOffset = -0;
+        // ctx.strokeRect(50, 50, 210, 210);
+
+
+        // 绘制文本
+        // fillText(text, x, y [, maxWidth])
+        // 在指定的(x,y)位置填充指定的文本，绘制的最大宽度是可选的.
+        // strokeText(text, x, y [, maxWidth])
+        // 在指定的(x,y)位置绘制文本边框，绘制的最大宽度是可选的.
+        // ctx.font = "100px sans-serif"
+        // ctx.fillText("花花", 10, 100);
+        // ctx.strokeText("花花", 10, 200)
+    //     给文本添加样式
+    //     font = value
+    //     当前我们用来绘制文本的样式。这个字符串使用和 CSS font属性相同的语法. 默认的字体是 10px sans-serif。
+    //     textAlign = value
+    //     文本对齐选项. 可选的值包括：start, end, left, right or center. 默认值是 start。
+    //     textBaseline = value
+    //     基线对齐选项，可选的值包括：top, hanging, middle, alphabetic, ideographic, bottom。默认值是 alphabetic。
+    //     direction = value
+    //     文本方向。可能的值包括：ltr, rtl, inherit。默认值是 inherit。
+    // </script>
+</body>
+</html>
