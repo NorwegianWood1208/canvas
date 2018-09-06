@@ -11,11 +11,12 @@
 </head>
 <body>
     <!-- 我的第一个canvas -->
-    <canvas id="tutorial" width="300" height="300"></canvas>
+    <img src="1.jpg" alt="" width="300"><br>
+    <canvas id="tutorial" width="600" height="400"></canvas>
     <script>
-        var canvas = document.getElementById('tutorial');
-        //获得 2d 上下文对象
-        var ctx = canvas.getContext('2d');
+        // var canvas = document.getElementById('tutorial');
+        // //获得 2d 上下文对象
+        // var ctx = canvas.getContext('2d');
 
         // 绘制矩形
         // // 填充矩形
@@ -144,9 +145,9 @@
         // 在指定的(x,y)位置填充指定的文本，绘制的最大宽度是可选的.
         // strokeText(text, x, y [, maxWidth])
         // 在指定的(x,y)位置绘制文本边框，绘制的最大宽度是可选的.
-        // ctx.font = "100px sans-serif"
-        // ctx.fillText("花花", 10, 100);
-        // ctx.strokeText("花花", 10, 200)
+            // ctx.font = "100px sans-serif"
+            // ctx.fillText("花花", 10, 100);
+            // ctx.strokeText("花花", 10, 200)
     //     给文本添加样式
     //     font = value
     //     当前我们用来绘制文本的样式。这个字符串使用和 CSS font属性相同的语法. 默认的字体是 10px sans-serif。
@@ -156,6 +157,314 @@
     //     基线对齐选项，可选的值包括：top, hanging, middle, alphabetic, ideographic, bottom。默认值是 alphabetic。
     //     direction = value
     //     文本方向。可能的值包括：ltr, rtl, inherit。默认值是 inherit。
-    // </script>
+
+
+
+        // 绘制图片
+        // var img = new Image();   // 创建img元素
+        // img.onload = function(){
+        //     ctx.drawImage(img, 0, 0)
+        // }
+        // // img.src = '1.jpg'; // 设置图片源地址
+
+        // 绘制img标签中的图片
+        // function draw(){
+        //     var canvas = document.getElementById('tutorial');
+        //     if (!canvas.getContext) return;
+        //     var ctx = canvas.getContext("2d");
+        //     var img = document.querySelector("img");
+        //     console.log(img)
+        //     ctx.drawImage(img, 0, 0, 400, 200)
+        // }
+        // document.querySelector("img").onclick = function (){
+        //     draw();
+        // }
+        
+        // 切片
+        // drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+
+
+
+        // 状态的保存和恢复
+        // var ctx;
+        // function draw(){
+        //     var canvas = document.getElementById('tutorial');
+        //     if (!canvas.getContext) return;
+        //     var ctx = canvas.getContext("2d");
+
+        //     ctx.fillRect(0, 0, 150, 150);   // 使用默认设置绘制一个矩形
+        //     ctx.save();                  // 保存默认状态
+
+        //     ctx.fillStyle = 'red'       // 在原有配置基础上对颜色做改变
+        //     ctx.fillRect(15, 15, 120, 120); // 使用新的设置绘制一个矩形
+
+        //     ctx.save();                  // 保存当前状态
+        //     ctx.fillStyle = '#FFF'       // 再次改变颜色配置
+        //     ctx.fillRect(30, 30, 90, 90);   // 使用新的配置绘制一个矩形
+
+        //     ctx.restore();               // 重新加载之前的颜色状态
+        //     ctx.fillRect(45, 45, 60, 60);   // 使用上一次的配置绘制一个矩形
+
+        //     ctx.restore();               // 加载默认颜色配置
+        //     ctx.fillRect(60, 60, 30, 30);   // 使用加载的配置绘制一个矩形
+        // }
+        // draw();
+
+
+
+
+        // 变形之位移
+        // var ctx;
+        // function draw(){
+        //     var canvas = document.getElementById('tutorial');
+        //     if (!canvas.getContext) return;
+        //     var ctx = canvas.getContext("2d");
+        //     ctx.save(); //保存坐原点平移之前的状态
+        //     ctx.translate(100, 100);
+        //     ctx.strokeRect(0, 0, 100, 100)
+        //     ctx.restore(); //恢复到最初状态
+        //     ctx.translate(220, 220);
+        //     ctx.fillRect(0, 0, 100, 100)
+        // }
+        // draw();
+        // var ctx;
+
+
+
+        // 变形之旋转
+        // function draw(){
+        // var canvas = document.getElementById('tutorial');
+        // if (!canvas.getContext) return;
+        // var ctx = canvas.getContext("2d");
+
+        // ctx.fillStyle = "red";
+        // ctx.save();
+
+        // ctx.translate(100, 100);
+        // ctx.rotate(Math.PI / 180 * 45);
+        // ctx.fillStyle = "blue";
+        // ctx.fillRect(0, 0, 100, 100);
+        // ctx.restore();
+
+        // ctx.save();
+        // ctx.translate(0, 0);
+        // ctx.fillRect(0, 0, 50, 50)
+        // ctx.restore();
+        // }
+        // draw();
+        // 106.186.112.44
+        // D2h9ZGQJvXajKVUNidJZ7n428CqWJA7e
+        // 8372
+
+
+        // 变形矩阵
+        // transform(a, b, c, d, e, f)
+        // a (m11)
+        // 水平缩放
+        // ​ Horizontal scaling.
+
+        // b (m12)
+        // 水平歪斜
+        // ​ Horizontal skewing.
+
+        // c (m21)
+        // 垂直歪斜
+        // ​ Vertical skewing.
+
+        // d (m22)
+        // 垂直缩放
+        // ​ Vertical scaling.
+
+        // e (dx)
+        // 水平移动
+        // ​ Horizontal moving.
+
+        // f (dy)
+        // 垂直移动
+        // ​ Vertical moving.
+
+        // var ctx;
+        // function draw(){
+        //     var canvas = document.getElementById('tutorial');
+        //     if (!canvas.getContext) return;
+        //     var ctx = canvas.getContext("2d");
+        //     ctx.transform(1, 1, 0, 1, 0, 0);
+        //     ctx.fillRect(0, 0, 100, 100);
+        // }
+        // draw();
+
+
+        // 合成
+        // var ctx;
+        // function draw(){
+        //     var canvas = document.getElementById('tutorial');
+        //     if (!canvas.getContext) return;
+        //     var ctx = canvas.getContext("2d");
+
+        //     ctx.fillStyle = "blue";
+        //     ctx.fillRect(0, 0, 200, 200);
+
+        //     ctx.globalCompositeOperation = "source-over"; //全局合成操作
+        //     ctx.fillStyle = "red";
+        //     ctx.fillRect(100, 100, 200, 200);
+        // }
+        // draw();
+
+
+        // 裁剪图形
+        // var ctx;
+        // function draw(){
+        //     var canvas = document.getElementById('tutorial');
+        //     if (!canvas.getContext) return;
+        //     var ctx = canvas.getContext("2d");
+
+        //     ctx.beginPath();
+        //     ctx.arc(20,20, 100, 0, Math.PI * 2);
+        //     ctx.clip();
+
+        //     ctx.fillStyle = "pink";
+        //     ctx.fillRect(20, 20, 100,100);
+        // }
+        // draw();
+
+
+
+        // let sun;
+        // let earth;
+        // let moon;
+        // let ctx;
+        // function init(){
+        //     sun = new Image();
+        //     earth = new Image();
+        //     moon = new Image();
+        //     sun.src = "1.jpg";
+        //     earth.src = "1.jpg";
+        //     moon.src = "1.jpg";
+
+        //     let canvas = document.querySelector("#tutorial");
+        //     ctx = canvas.getContext("2d");
+
+        //     sun.onload = function (){
+        //         draw()
+        //     }
+
+        // }
+        // init();
+        // function draw(){
+        //     ctx.clearRect(0, 0, 300, 300); //清空所有的内容
+        //     /*绘制 太阳*/
+        //     ctx.drawImage(sun, 0, 0, 300, 300);
+
+        //     ctx.save();
+        //     ctx.translate(150, 150);
+
+        //     //绘制earth轨道
+        //     ctx.beginPath();
+        //     ctx.strokeStyle = "rgba(255,255,0,0.5)";
+        //     ctx.arc(0, 0, 100, 0, 2 * Math.PI)
+        //     ctx.stroke()
+
+        //     let time = new Date();
+        //     //绘制地球
+        //     ctx.rotate(2 * Math.PI / 60 * time.getSeconds() + 2 * Math.PI / 60000 * time.getMilliseconds())
+        //     ctx.translate(100, 0);
+        //     ctx.drawImage(earth, -12, -12)
+
+        //     //绘制月球轨道
+        //     ctx.beginPath();
+        //     ctx.strokeStyle = "rgba(255,255,255,.3)";
+        //     ctx.arc(0, 0, 40, 0, 2 * Math.PI);
+        //     ctx.stroke();
+
+        //     //绘制月球
+        //     ctx.rotate(2 * Math.PI / 6 * time.getSeconds() + 2 * Math.PI / 6000 * time.getMilliseconds());
+        //     ctx.translate(40, 0);
+        //     ctx.drawImage(moon, -3.5, -3.5);
+        //     ctx.restore();
+
+        //     requestAnimationFrame(draw);
+        // }
+        init();
+
+        function init(){
+            let canvas = document.querySelector("#tutorial");
+            let ctx = canvas.getContext("2d");
+            draw(ctx);
+        }
+
+        function draw(ctx){
+            requestAnimationFrame(function step(){
+                drawDial(ctx); //绘制表盘
+                drawAllHands(ctx); //绘制时分秒针
+                requestAnimationFrame(step);
+            });
+        }
+        /*绘制时分秒针*/
+        function drawAllHands(ctx){
+            let time = new Date();
+
+            let s = time.getSeconds();
+            let m = time.getMinutes();
+            let h = time.getHours();
+
+            let pi = Math.PI;
+            let secondAngle = pi / 180 * 6 * s;  //计算出来s针的弧度
+            let minuteAngle = pi / 180 * 6 * m + secondAngle / 60;  //计算出来分针的弧度
+            let hourAngle = pi / 180 * 30 * h + minuteAngle / 12;  //计算出来时针的弧度
+
+            drawHand(hourAngle, 60, 6, "red", ctx);  //绘制时针
+            drawHand(minuteAngle, 106, 4, "green", ctx);  //绘制分针
+            drawHand(secondAngle, 129, 2, "blue", ctx);  //绘制秒针
+        }
+/*绘制时针、或分针、或秒针
+ * 参数1：要绘制的针的角度
+ * 参数2：要绘制的针的长度
+ * 参数3：要绘制的针的宽度
+ * 参数4：要绘制的针的颜色
+ * 参数4：ctx
+ * */
+    function drawHand(angle, len, width, color, ctx){
+        ctx.save();
+        ctx.translate(150, 150); //把坐标轴的远点平移到原来的中心
+        ctx.rotate(-Math.PI / 2 + angle);  //旋转坐标轴。 x轴就是针的角度
+        ctx.beginPath();
+        ctx.moveTo(-4, 0);
+        ctx.lineTo(len, 0);  // 沿着x轴绘制针
+        ctx.lineWidth = width;
+        ctx.strokeStyle = color;
+        ctx.lineCap = "round";
+        ctx.stroke();
+        ctx.closePath();
+        ctx.restore();
+    }
+
+    /*绘制表盘*/
+    function drawDial(ctx){
+        let pi = Math.PI;
+
+        ctx.clearRect(0, 0, 300, 300); //清除所有内容
+        ctx.save();
+
+        ctx.translate(150, 150); //一定坐标原点到原来的中心
+        ctx.beginPath();
+        ctx.arc(0, 0, 148, 0, 2 * pi); //绘制圆周
+        ctx.stroke();
+        ctx.closePath();
+
+        for (let i = 0; i < 60; i++){//绘制刻度。
+            ctx.save();
+            ctx.rotate(-pi / 2 + i * pi / 30);  //旋转坐标轴。坐标轴x的正方形从 向上开始算起
+            ctx.beginPath();
+            ctx.moveTo(110, 0);
+            ctx.lineTo(140, 0);
+            ctx.lineWidth = i % 5 ? 2 : 4;
+            ctx.strokeStyle = i % 5 ? "blue" : "red";
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+        }
+        ctx.restore();
+    }
+    </script>
 </body>
 </html>
